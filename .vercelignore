@@ -1,0 +1,6 @@
+screenshot-*.png
+.git
+.env*
+.vercel
+.gitignore
+.vercelignore

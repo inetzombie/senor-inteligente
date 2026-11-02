@@ -1,0 +1,35 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<title>Señor Inteligente</title>
+<meta name="description" content="Frantic run-and-gun: blast AI agents, grab robots, flip every AI sign to SI, ride a flying Roadster, beat the giant AI mech.">
+<meta name="theme-color" content="#0b0614"><meta name="apple-mobile-web-app-capable" content="yes">
+<meta property="og:type" content="website"><meta property="og:url" content="https://senor-inteligente.vercel.app/"><meta property="og:title" content="Señor Inteligente">
+<meta property="og:description" content="Run-and-gun arcade: blast AI bots, flip AI to SI, ride the flying Roadster. Play in your browser.">
+<meta property="og:image" content="https://senor-inteligente.vercel.app/screenshot.png"><meta property="og:image:width" content="1280"><meta property="og:image:height" content="720">
+<meta name="twitter:card" content="player"><meta name="twitter:title" content="Señor Inteligente">
+<meta name="twitter:description" content="Run-and-gun: blast AI bots, flip AI to SI, ride the flying Roadster.">
+<meta name="twitter:image" content="https://senor-inteligente.vercel.app/screenshot.png">
+<meta name="twitter:player" content="https://senor-inteligente.vercel.app/?embed=1"><meta name="twitter:player:width" content="640"><meta name="twitter:player:height" content="360">
+<link rel="manifest" href="manifest.json"><link rel="icon" href="icon.svg"><link rel="apple-touch-icon" href="icon.svg">
+<style>
+html,body{margin:0;height:100%;background:#000;overflow:hidden;touch-action:none;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}
+#wrap{position:fixed;inset:0;display:flex;align-items:center;justify-content:center}
+canvas{cursor:crosshair;display:block}
+#crt{display:none;position:fixed;pointer-events:none;inset:0;background:repeating-linear-gradient(0deg,rgba(0,0,0,.22) 0 1px,transparent 1px 3px),radial-gradient(ellipse at center,transparent 60%,rgba(0,0,0,.6))}
+#crt.on{display:block}
+#touch{position:fixed;inset:0;pointer-events:none;display:none}
+#touch button{pointer-events:auto;position:absolute;width:62px;height:62px;border-radius:50%;border:3px solid #fff;background:rgba(0,0,0,.35);color:#fff;font:bold 12px monospace;bottom:calc(18px + env(safe-area-inset-bottom))}
+body.gut #touch button{right:calc(12px + env(safe-area-inset-right))!important;width:66px;height:66px}
+body.gut #touch button[data-k=grab]{bottom:calc(96px + env(safe-area-inset-bottom))}
+body.gut #hint,body.port #hint{display:none}
+body.port #touch button{width:74px;height:74px;bottom:calc(22px + env(safe-area-inset-bottom))}
+#hint{position:fixed;left:14px;bottom:14px;color:#fff6;font:11px monospace;pointer-events:none}
+</style></head><body>
+<div id="wrap"><canvas id="c" width="960" height="540"></canvas></div><div id="crt"></div>
+<div id="touch"><div id="hint">left: drag to move · right: drag to aim &amp; fire</div>
+<button data-k="jump" style="right:16px">JUMP</button>
+<button data-k="grab" style="right:90px">GRAB</button>
+</div>
+<script>window.TP_SPLIT=1</script><script src="trackpoint.js"></script><script src="game.js"></script>
+<script>if('serviceWorker'in navigator&&!/embed=1/.test(location.search))navigator.serviceWorker.register('sw.js').catch(()=>{})</script>
+</body></html>
